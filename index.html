@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Glad2Glow - Home</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
@@ -12,6 +11,48 @@
             font-family: 'Quicksand', sans-serif;
             background-color: #fffafa;
             color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #ffe4ec;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e04848;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #ffb6c1;
+            padding: 12px;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #333;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 650px;
+            padding: 20px;
         }
 
         .content img {
@@ -25,12 +66,13 @@
         .sidebar-widget {
             background: #ffe4ec;
             padding: 15px;
-            margin-top: 20px;
+            margin: 20px;
             border-radius: 10px;
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            max-width: 300px;
+            height: fit-content;
         }
 
-        /* Animasi */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -48,23 +90,6 @@
             }
         }
 
-        .typewriter {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #ff5f5f;
-            animation: typing 3s steps(40, end), blink 0.8s step-end infinite;
-            display: inline-block;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
         ul {
             padding-left: 20px;
         }
@@ -78,6 +103,19 @@
             width: 1em;
             margin-left: -1em;
             margin-right: 8px;
+        }
+
+        .footer {
+            background-color: #ffe4ec;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .footer-widget {
+            color: #e04848;
         }
     </style>
 </head>
@@ -93,20 +131,14 @@
 
     <div class="main">
         <div class="content">
-            <h2 class="typewriter">Selamat Datang di Glad2Glow</h2>
+            <h2 class="fade-in-up delay-1">Selamat Datang di Glad2Glow</h2>
             <img src="profik.jpg" alt="Skincare">
 
-            <p class="fade-in-up delay-1">
-                <strong>Glad2Glow</strong> adalah brand skincare lokal yang didedikasikan untuk menciptakan produk perawatan kulit berkualitas tinggi dengan memadukan teknologi modern dan bahan-bahan alami pilihan.
-            </p>
+            <p class="fade-in-up delay-1"><strong>Glad2Glow</strong> adalah brand skincare lokal yang didedikasikan untuk menciptakan produk perawatan kulit berkualitas tinggi dengan memadukan teknologi modern dan bahan-bahan alami pilihan.</p>
 
-            <p class="fade-in-up delay-2">
-                Kami percaya bahwa setiap orang berhak memiliki kulit sehat dan glowing tanpa harus khawatir dengan bahan kimia berbahaya. Produk kami diformulasikan oleh para ahli dermatologi dan telah teruji aman untuk semua jenis kulit, termasuk kulit sensitif.
-            </p>
+            <p class="fade-in-up delay-2">Kami percaya bahwa setiap orang berhak memiliki kulit sehat dan glowing tanpa harus khawatir dengan bahan kimia berbahaya. Produk kami diformulasikan oleh para ahli dermatologi dan telah teruji aman untuk semua jenis kulit, termasuk kulit sensitif.</p>
 
-            <p class="fade-in-up delay-3">
-                Dengan fokus pada hasil yang nyata dan pengalaman yang menyenangkan, Glad2Glow menghadirkan rangkaian produk seperti:
-            </p>
+            <p class="fade-in-up delay-3">Dengan fokus pada hasil yang nyata dan pengalaman yang menyenangkan, Glad2Glow menghadirkan rangkaian produk seperti:</p>
 
             <ul class="fade-in-up delay-3">
                 <li><strong>Flawless Glow Cushion</strong> – hasil akhir makeup glowing natural.</li>
@@ -114,9 +146,7 @@
                 <li><strong>Gentle Peeling Serum</strong> – mengangkat sel kulit mati & mencerahkan.</li>
             </ul>
 
-            <p class="fade-in-up delay-3" style="text-align:center;">
-                <strong>✨ Mulailah perjalanan kulit sehatmu bersama Glad2Glow. Cantik alami, percaya diri setiap hari! ✨</strong>
-            </p>
+            <p class="fade-in-up delay-3" style="text-align:center;"><strong>✨ Mulailah perjalanan kulit sehatmu bersama Glad2Glow. Cantik alami, percaya diri setiap hari! ✨</strong></p>
         </div>
 
         <div class="sidebar-widget fade-in-up delay-3">
@@ -131,8 +161,6 @@
         <div class="footer-widget">Bantuan</div>
         <div class="footer-widget">Profil Singkat</div>
     </div>
-
-    <script src="js/script.js"></script>
 
 </body>
 </html>
