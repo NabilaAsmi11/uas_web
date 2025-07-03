@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemesanan Glad2Glow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fffafa;
+            padding: 20px;
+            color: #333;
+        }
+
+        .form-container, .reseller-info {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffe4ec;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .reseller-info {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container h2, .reseller-info h2 {
+            color: #e04848;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .whatsapp-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background-color: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        .back-btn {
+            background-color: #ff5f5f;
+        }
+
+        .back-btn:hover {
+            background-color: #e04848;
+        }
+
+        .reseller-info img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="reseller-info">
+    <h2>Reseller Glad2Glow</h2>
+    <img src="saya.jpg" alt="Foto Nabila Putrii Asmi">
+    <p><strong>Nama:</strong> Nabila Putrii Asmi</p>
+    <p><strong>Reseller Resmi Glad2Glow</strong></p>
+    <p><strong>WhatsApp:</strong> 0822-0644-5872</p>
+</div>
+
+<div class="form-container">
+    <h2>Formulir Pemesanan Glad2Glow</h2>
+
+    <label for="nama">Nama Pemesan:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama Anda">
+
+    <label for="nomor">Nomor WhatsApp:</label>
+    <input type="text" id="nomor" placeholder="Contoh: 081234567890">
+
+    <label for="produk">Pilih Produk:</label>
+    <select id="produk">
+        <option value="Flawless Glow Cushion">Flawless Glow Cushion</option>
+        <option value="HydraBoost Moisturizer">HydraBoost Moisturizer</option>
+        <option value="Gentle Peeling Serum">Gentle Peeling Serum</option>
+        <option value="Paket Glowing Kit">Paket Glowing Kit</option>
+        <option value="ClayStik Purifying Mask">ClayStik Purifying Mask</option>
+        <option value="Paket Acne Kit">Paket Acne Kit</option>
+    </select>
+
+    <a href="#" class="whatsapp-btn" onclick="kirimPesan()">
+        <i class="fa-brands fa-whatsapp"></i> Kirim ke WhatsApp
+    </a>
+
+    <a href="index.html" class="whatsapp-btn back-btn">
+        <i class="fa-solid fa-house"></i> Kembali ke Halaman Utama
+    </a>
+</div>
+
+<script>
+    function kirimPesan() {
+        var nama = document.getElementById('nama').value;
+        var nomor = document.getElementById('nomor').value;
+        var produk = document.getElementById('produk').value;
+
+        if (!nama || !nomor) {
+            alert('Mohon lengkapi semua data!');
+            return;
+        }
+
+        var pesan = `Halo Kak Nabila, saya ingin memesan produk Glad2Glow:\n\nNama: ${nama}\nNomor HP: ${nomor}\nProduk: ${produk}\n\nTerima kasih!`;
+        var nomorAdmin = '6282206445872';
+        var url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
