@@ -48,12 +48,13 @@
             text-align: left;
         }
 
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
+            box-sizing: border-box;
         }
 
         .whatsapp-btn {
@@ -88,6 +89,10 @@
             margin-bottom: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
+
+        p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +102,7 @@
     <img src="saya.jpg" alt="Foto Nabila Putrii Asmi">
     <p><strong>Nama:</strong> Nabila Putrii Asmi</p>
     <p><strong>Reseller Resmi Glad2Glow</strong></p>
-    <p><strong>WhatsApp:</strong> 0822-0644-5872</p>
+    <p><strong>WhatsApp:</strong> 0822-2864-45872</p>
 </div>
 
 <div class="form-container">
@@ -108,6 +113,9 @@
 
     <label for="nomor">Nomor WhatsApp:</label>
     <input type="text" id="nomor" placeholder="Contoh: 081234567890">
+
+    <label for="alamat">Alamat Pengiriman:</label>
+    <textarea id="alamat" rows="3" placeholder="Tulis alamat lengkap Anda..."></textarea>
 
     <label for="produk">Pilih Produk:</label>
     <select id="produk">
@@ -132,17 +140,23 @@
     function kirimPesan() {
         var nama = document.getElementById('nama').value;
         var nomor = document.getElementById('nomor').value;
+        var alamat = document.getElementById('alamat').value;
         var produk = document.getElementById('produk').value;
 
-        if (!nama || !nomor) {
+        if (!nama || !nomor || !alamat) {
             alert('Mohon lengkapi semua data!');
             return;
         }
 
-        var pesan = `Halo Kak Nabila, saya ingin memesan produk Glad2Glow:\n\nNama: ${nama}\nNomor HP: ${nomor}\nProduk: ${produk}\n\nTerima kasih!`;
-        var nomorAdmin = '6282206445872';
+        var pesan = `Halo Kak, saya ingin memesan produk Glad2Glow:\n\nNama: ${nama}\nNomor HP: ${nomor}\nAlamat: ${alamat}\nProduk: ${produk}\n\nTerima kasih!`;
+
+        // Nomor WhatsApp kamu dalam format internasional
+        var nomorAdmin = '6282286445872';
+
+        // Link WhatsApp
         var url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
 
+        // Buka WhatsApp
         window.open(url, '_blank');
     }
 </script>
